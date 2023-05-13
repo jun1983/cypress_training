@@ -1,0 +1,15 @@
+{
+  "name": "cy-training",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy": "npm run cy"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "cypress": "12.8.1",
+    "typescript": "^5.0.2"
+  }
+}
