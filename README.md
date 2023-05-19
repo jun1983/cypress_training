@@ -8,7 +8,7 @@
 
 * Go to the local folder in Terminal
 
-* Clone this project from Github: `git clone https://github.com/jun1983/cypress_training_base.git`
+* Clone this project from Github: `git clone https://github.com/jun1983/cypress_training.git`
 
 * Go to the project folder `~/projects/cypress_training`
 
