@@ -1,16 +1,18 @@
-describe('drag', () => {
-    xit('click twice', () => {
+describe('obstacle practice', () => {
+    it('click twice', () => {
         cy.visit('https://obstaclecourse.tricentis.com/Obstacles/72954');
-        cy.get('.btn').click().click()
+        cy.contains('a','Click Me 2x').click()
+        cy.contains('a','Click me once more').click()
     });
 
-    xit('41041', () => {
+    it('41041', () => {
         cy.visit('https://obstaclecourse.tricentis.com/Obstacles/41041')
         cy.get('input[name="resulttext"]')
-            .type('{{}Click}')
+            .type('{Click}', { parseSpecialCharSequences: false })
     });
+
     it('drag', () => {
         cy.visit('https://obstaclecourse.tricentis.com/Obstacles/60469')
-        cy.get('#toscabot').dragTo('#to')
+        cy.get('#toscabot').dragTo('#to');
     })
 })
