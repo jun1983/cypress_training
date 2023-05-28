@@ -9,6 +9,7 @@
   "author": "",
   "license": "",
   "dependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.3",
     "cypress": "12.8.1",
     "cypress-multi-reporters": "^1.6.3",
     "mocha": "^10.2.0",
