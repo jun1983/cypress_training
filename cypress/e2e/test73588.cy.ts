@@ -7,10 +7,13 @@ describe('DropDown Select Test', ()=>{
        cy.get('#clickme').click();
        cy.wait(1000);
 
-       cy.get('#randomtext').invoke('text').then((generatedString) => {
-           console.log(generatedString);
+       cy.get('#randomtext').should('exist');
+       // cy.get('#randomtext').should('not.be.empty');
+
+       cy.get('#randomtext').invoke('val').then((val) => {
+           console.log(val);
            cy.get('#selectlink').children().each(($el) => {
-                   if ($el.text() === generatedString) {
+                   if ($el.text() === val) {
                        cy.get('#selectlink').select($el.text());
                    }
                }
