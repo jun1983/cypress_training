@@ -56,7 +56,7 @@ it('81012', ()=> {
 
             cy.get('#totalamountText').type(amount);
 
-        });
+        })
     })
 
 
