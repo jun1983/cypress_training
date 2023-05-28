@@ -17,5 +17,28 @@ describe('obstacle practice', () => {
         cy.visit('https://obstaclecourse.tricentis.com/Obstacles/60469')
         cy.get('#toscabot').dragTo('#to')
         cy.contains('Good job!')
-    })
+    });
+
+    it('41038', () => {
+        cy.visit('https://obstaclecourse.tricentis.com/Obstacles/41038')
+        cy.contains('Click into my right half').click('right', { force: true })
+        cy.contains('Good job!')
+    });
+
+    it('41037', () => {
+        cy.visit('https://obstaclecourse.tricentis.com/Obstacles/41037')
+        cy.get('tbody > :nth-child(3) > :nth-child(5)').invoke('text').then((text) => {
+            cy.get('input[name=resulttext]')
+                .type(text)
+            cy.contains('Good job!')
+
+        })
+    });
+
+    it('22505', () => {
+        cy.visit('https://obstaclecourse.tricentis.com/Obstacles/22505')
+        cy.contains('Click me!').click()
+        cy.contains('Good job!')
+    });
+    
 })
