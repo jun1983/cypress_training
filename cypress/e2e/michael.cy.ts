@@ -37,17 +37,17 @@ describe('obstacle practice', () => {
         cy.contains('Good job!')
     })
 
-    it('81012', () => {
+    it.only('81012', () => {
         cy.visit('https://obstaclecourse.tricentis.com/Obstacles/81012')
         cy.contains('We charged the total amount of')
             .invoke('text')
             .then(text => {
-                const regex = /\d+(\.\d+)?/
+                const regex = /\d+\.\d+/
                 const match = text.match(regex)
                 if (!match) {
                     throw new Error('Amount is null')
                 }
-                cy.get('#totalamountText').type(match[1])
+                cy.get('#totalamountText').type(match[0])
                 cy.contains('Good job!')
             })
     })
