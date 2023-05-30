@@ -37,7 +37,7 @@ describe('obstacle practice', () => {
         cy.contains('Good job!')
     })
 
-    it.only('81012', () => {
+    it('81012', () => {
         cy.visit('https://obstaclecourse.tricentis.com/Obstacles/81012')
         cy.contains('We charged the total amount of')
             .invoke('text')
