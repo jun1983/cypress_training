@@ -43,7 +43,7 @@ describe('obstacle practice', () => {
             .then(text => {
                 const regex = /\d+(\.\d+)?/
                 const match = text.match(regex)
-                const number = match ? parseFloat(match[0]) : null;
+                const number = match ? parseFloat(match[0]) : null
                 cy.get('#totalamountText').type(number)
                 cy.contains('Good job!')
             })
