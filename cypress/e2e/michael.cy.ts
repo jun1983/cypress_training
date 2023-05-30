@@ -33,7 +33,7 @@ describe('obstacle practice', () => {
     
     it.only('12952', () => {
         cy.visit('https://obstaclecourse.tricentis.com/Obstacles/12952')
-        cy.get('a#id').eq(1).click()
+        cy.get('#thisoneistheright a').click()
         cy.contains('Good job!')
     })
 
