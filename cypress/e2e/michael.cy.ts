@@ -30,8 +30,8 @@ describe('obstacle practice', () => {
         cy.contains('Click me!').click()
         cy.contains('Good job!')
     })
-    
-    it.only('12952', () => {
+
+    it('12952', () => {
         cy.visit('https://obstaclecourse.tricentis.com/Obstacles/12952')
         cy.get('#thisoneistheright a').click()
         cy.contains('Good job!')
@@ -44,7 +44,7 @@ describe('obstacle practice', () => {
             .then(text => {
                 const regex = /\d+(\.\d+)?/
                 const match = text.match(regex)
-                if (!match){
+                if (!match) {
                     throw new Error('Amount is null')
                 }
                 cy.get('#totalamountText').type(match[1])
