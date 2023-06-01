@@ -42,3 +42,49 @@ it('81012', ()=> {
         })
     cy.contains("Good job!")
 })
+
+//***************************************************************************
+it('78264', () =>{
+    cy.visit('https://obstaclecourse.tricentis.com/Obstacles/78264')
+    cy.get('#no1').invoke('text').then((text1)=>{
+        let num1 = Number(text1)
+        cy.get('#no2').invoke('text').then((text2)=>{
+            let num2 = Number(text2)
+            let sum = num1 + num2
+            cy.get('#result').type(sum.toString())
+        })
+    })
+    cy.contains("Good job!")
+})
+
+//***************************************************************************
+it('70310', () =>{
+    cy.visit('https://obstaclecourse.tricentis.com/Obstacles/70310')
+    cy.get('#orderTable tr').then((rows) =>{
+        cy.wrap(rows).last().find('td').eq(1).invoke('text').then((text)=>{
+            cy.get('#ordervalue').type(text)
+        })
+    })
+    cy.contains("Good job!")
+})
+
+//***************************************************************************
+it('33678', () =>{
+    cy.visit('https://obstaclecourse.tricentis.com/Obstacles/33678')
+    cy.get('#one').click()
+    const checkProgressAndClick = () => {
+        cy.get('#label').then(($label) => {
+            const percentage: number = parseInt($label.text(), 10)
+            if (percentage !== 100) {
+                cy.wait(500).then(checkProgressAndClick)
+            } else {
+                cy.get('#two').click()
+            }
+        })
+    }
+    checkProgressAndClick()
+    cy.contains("Good job!")
+})
+
+
+//***************************************************************************
