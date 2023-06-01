@@ -86,5 +86,47 @@ it('33678', () =>{
     cy.contains("Good job!")
 })
 
+//***************************************************************************
+it('23292', () =>{
+    cy.visit('https://obstaclecourse.tricentis.com/Obstacles/23292')
+    let taskIDs = []
+    cy.get('tbody tr.draggable-row').each(($row)=>{
+        const id = parseInt($row.find('td').eq(0).text(), 10)
+        taskIDs.push(id)
+    }).then(() => {
+        taskIDs.sort((a, b) => a - b)
+
+        for(let i = 0; i<taskIDs.length; i++){
+            cy.get(`#todo-tasks tr[task="${taskIDs[i]}"]`).trigger('mousedown', { which: 1 })
+            cy.get('#completed-tasks').trigger('mousemove').trigger('mouseup', { force: true })
+        }})
+    cy.contains("Good job!")
+})
 
 //***************************************************************************
+it('14090', ()=> {
+    cy.visit('https://obstaclecourse.tricentis.com/Obstacles/14090/')
+    cy.get('#generate').click()
+    let chars = []
+    cy.get('td.task').each(($el) => {
+        const text = $el.text()
+        const char = text.charAt(text.length - 1)
+        chars.push(char)
+    }).then(()=>{
+        cy.get('#comboboxTable tr').each(($row, index) => {
+            if (index > 0) {
+                const taskText = $row.find('td.task').text()
+                const char = taskText.charAt(taskText.length - 1)
+                const $select = $row.find('td.value select')
+
+                cy.wrap($select).find('option').each(($option) => {
+                    if ($option.text().startsWith(char)) {
+                        cy.wrap($select).select($option.text())
+                    }
+                })
+            }
+        })
+    })
+    cy.get("#submit").click()
+    cy.contains("Good job!")
+})
