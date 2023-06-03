@@ -18,5 +18,15 @@
     "typescript": "^5.0.2",
     "@badeball/cypress-cucumber-preprocessor": "^17.2.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "messages": {
+      "enabled": true,
+      "output": "test-reports/cucumber/cucumber.ndjson"
+    },
+    "html": {
+      "enabled": true,
+      "output": "test-reports/cucumber/cucumber.html"
+    }
   }
 }
