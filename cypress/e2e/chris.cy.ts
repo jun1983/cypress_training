@@ -13,7 +13,7 @@ describe("", () => {
             cy.writeFile(fileName, response.body, 'binary');
           });
         // convert xml to json
-        cy.readFile('downloadedFile.xml').then((xmlContent) => {
+        cy.readFile('Catalog.xml').then((xmlContent) => {
             const parser = new xml2js.Parser();
             parser.parseString(xmlContent, (err, result) => {
               if (err) {
