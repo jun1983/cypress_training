@@ -36,7 +36,7 @@
 //   }
 // }
 require('@4tw/cypress-drag-drop');
-Cypress.Commands.add("dragTo", { prevSubject: "element" }, (subject, targetEl) => {
+Cypress.Commands.add("dragTo", { prevSubject: "element" }, (subject:string, targetEl:string) => {
     const dataTransfer = new DataTransfer(); 
     cy.get(subject).trigger('dragstart',{
        dataTransfer 
