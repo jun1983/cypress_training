@@ -1,0 +1,18 @@
+{
+  "airports": [
+      {
+          "code": "MEL",
+          "name": "Melbourne",
+          "city": {
+              "code": "MEL",
+              "name": "Melbourne"
+          },
+          "country": {
+              "code": "AU",
+              "name": "Australia"
+          },
+          "isClassicOnly": false,
+          "isCommercialOnly": false
+      }
+  ]
+}
