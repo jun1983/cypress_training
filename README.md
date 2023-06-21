@@ -17,3 +17,5 @@
 * Run `npx cypress open` to launch Cypress, select `E2E testing` and `Continue` on the next page. By doing this, cypress automatically creates a project skeleton for you. (You should see a cypress folder in your project)
 
 * On Cypress UI, choose `Start E2E testing in Chrome`, then you can either choose `Sample tests` or `empty spec`. It will continue to add files in your project as part of the initial setup
+
+test commit
