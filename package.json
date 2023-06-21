@@ -10,12 +10,24 @@
   "license": "",
   "dependencies": {
     "@4tw/cypress-drag-drop": "^2.2.3",
-    "cypress": "12.8.1",
+    "cypress": "12.13.0",
     "cypress-multi-reporters": "^1.6.3",
     "mocha": "^10.2.0",
     "mocha-junit-reporter": "^1.23.3",
     "mochawesome": "^7.1.3",
-    "typescript": "^5.1.3",
-    "xml2js": "^0.6.0"
+    "typescript": "^5.0.2",
+    "xml2js": "^0.6.0",
+    "@badeball/cypress-cucumber-preprocessor": "^17.2.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "messages": {
+      "enabled": true,
+      "output": "test-reports/cucumber/cucumber.ndjson"
+    },
+    "html": {
+      "enabled": true,
+      "output": "test-reports/cucumber/cucumber.html"
+    }
   }
 }
