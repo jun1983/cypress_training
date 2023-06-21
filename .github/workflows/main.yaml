@@ -17,9 +17,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          browser: chrome
-          headed: false
-          spec: cypress/e2e/*.cy.ts
+          command: npx cypress run --browser chrome --spec 'cypress/e2e/**/*.feature'
       - name: Archive test results
         uses: actions/upload-artifact@v3
         if: ${{ always() }}

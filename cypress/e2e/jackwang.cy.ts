@@ -1,7 +1,7 @@
-import * as dayjs from "dayjs"
+import dayjs from "dayjs"
 
 it('19875', () =>{
-    cy.visit('https://obstaclecourse.tricentis.com/Obstacles/19875')
+    cy.visit('/19875')
     const text : string =dayjs().add(1,'day')
         .format('DD.MM.YYYY')
     cy.get('#datefield').type(text)
@@ -10,14 +10,14 @@ it('19875', () =>{
 
 //***************************************************************************
 it('41040', () =>{
-    cy.visit('https://obstaclecourse.tricentis.com/Obstacles/41040')
+    cy.visit('/41040')
     cy.get('#buttontoclick').trigger('click')
     cy.contains("Good job!")
 })
 
 //***************************************************************************
 it('73588', ()=> {
-    cy.visit('https://obstaclecourse.tricentis.com/Obstacles/73588/')
+    cy.visit('/73588')
     cy.get('#clickme').click()
     cy.get('#randomtext').should('not.have.value', '')
     cy.get('#randomtext').invoke('val').then((val)=>{
