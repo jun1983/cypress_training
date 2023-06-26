@@ -21,7 +21,7 @@ export default defineConfig({
   
   e2e: {
     baseUrl: 'https://www.qantas.com/au/en',
-    specPattern: "**/*.feature",
+    specPattern: "**/*.cy.ts",
     async setupNodeEvents(
       on: Cypress.PluginEvents,
       config: Cypress.PluginConfigOptions
