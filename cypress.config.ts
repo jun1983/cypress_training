@@ -20,7 +20,7 @@ export default defineConfig({
   },
   
   e2e: {
-    baseUrl: 'https://www.qantas.com/au/en',
+    baseUrl: 'https://obstaclecourse.tricentis.com/Obstacles',
     specPattern: "**/*.cy.ts",
     async setupNodeEvents(
       on: Cypress.PluginEvents,
