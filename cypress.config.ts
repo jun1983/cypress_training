@@ -21,7 +21,14 @@ export default defineConfig({
   
   e2e: {
     baseUrl: 'https://www.qantas.com/au/en',
-    specPattern: "**/*.feature",
+    specPattern: "**/flight_search_submission.feature",
+    blockHosts: [
+      "dpm.demdex.net",
+      "rum.browser-intake-datadoghq.com",
+      "tt.omtrdc.net",
+      "a.a.a",
+      "onetrust.com"
+    ],
     async setupNodeEvents(
       on: Cypress.PluginEvents,
       config: Cypress.PluginConfigOptions

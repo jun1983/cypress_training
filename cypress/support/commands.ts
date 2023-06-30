@@ -46,11 +46,3 @@ Cypress.Commands.add("dragTo", { prevSubject: "element" }, (subject:string, targ
     })
   }
 );
-
-Cypress.Commands.add('clickElement', (element) => {
-  cy.get(element).click()
-})
-
-Cypress.Commands.add('passenger_select',(element,number)=>{
-  cy.get(element).focus().clear().type(number)
-})
