@@ -1,13 +1,16 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import BookFlightsPage from "../../e2e/page_objects/pages/book_flights_page";
+
+let bookFlightsPage = new BookFlightsPage()
 
 Given("I am on the flight search page", function () {
-  cy.log("I am on the flight search page")
+  bookFlightsPage.visit()
 });
 
 When("I choose use {string} to pay", choosePayMethod);
 
 When("I click submit button", ()=>{
-  cy.log("I click submit button")
+  bookFlightsPage.flightSearchWidget().clickSearchFlightButton()
 });
 
 When("I select trip type as {string}", (tripType:string)=>{
@@ -23,7 +26,10 @@ When("I select flexible dates as {string}", (flexibleDates:string)=>{
 })
 
 When("I select airports as {string}", (airports:string)=>{
-  cy.log("I select airports as ", airports)
+  let fromPort = airports.split(",")[0]
+  let toPort = airports.split(",")[1]
+  bookFlightsPage.flightSearchWidget().departurePort().setValue(fromPort)
+  bookFlightsPage.flightSearchWidget().arrivalPort().setValue(toPort)
 })
 
 When("I select travel dates in {string} days", (travelDates:string)=>{
@@ -35,7 +41,8 @@ When("I select travel class as {string}", (travelClass:string)=>{
 })
 
 Then("I should see empty travel date error message", ()=>{
-  cy.log("I should see empty travel date error message")
+  bookFlightsPage.flightSearchWidget().travelDate()
+  .verifyErrorMessage("Please select a departure date")
 });
 
 Then("I should see empty return date error message", ()=>{
