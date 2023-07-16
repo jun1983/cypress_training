@@ -3,7 +3,7 @@ import FlightSearchWidget from "../components/flight_search_widget"
 
 class HomePage extends BasePage {
     flightSearchWidget():FlightSearchWidget{
-        return new FlightSearchWidget(cy.get(`[data-widget-type="flight-search"]`));
+        return new FlightSearchWidget(`[data-widget-type="flight-search"]`);
     }
 
     multiSearchForm(){

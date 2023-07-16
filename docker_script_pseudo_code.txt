@@ -1,0 +1,9 @@
+if {container_name} exists:
+    docker start {container_name}
+else:
+    docker run {container_name}
+docker exec rm -rf {work_dir}
+docker cp local_project {work_dir}
+docker exec npm install
+docker exec npx cypress run
+docker stop

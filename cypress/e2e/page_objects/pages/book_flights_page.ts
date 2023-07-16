@@ -5,7 +5,7 @@ class BookFlightsPage extends BasePage {
     pageURL = "/book-a-trip/flights.html"
 
     flightSearchWidget(){
-        return new FlightSearchWidget(cy.get(`[data-widget-type="flight-search"]`).eq(0));
+        return new FlightSearchWidget(`[data-widget-type="flight-search"]`);
     }
 
     visit() {
